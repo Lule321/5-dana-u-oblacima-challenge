@@ -15,6 +15,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+
 import java.io.IOException;
 import java.util.*;
 import java.util.logging.Level;
@@ -120,6 +121,9 @@ public class OrderServiceImpl implements OrderService{
         order.setOrderStatus(OrderStatus.CLOSED);
         orderRepository.save(order);
         order.setTrades(tradeRepository.fetchTradesByOrder(order.getId()));
+
+
+
         try {
             simpleEmailService.sendMail("Order closed :D", "Here is your completed order: \n" + order, order.getUser().getEmail());
         }catch (IOException e) {
