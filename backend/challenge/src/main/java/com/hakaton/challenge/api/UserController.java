@@ -22,7 +22,7 @@ public class UserController {
     @PostMapping
     public ResponseEntity<User> addUser(@RequestBody User user)
     {
-        if(!user.isUserValid())
+        if(!user.IsValid())
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid email!");
         user = userService.saveUser(user);
         return new ResponseEntity<>(user, HttpStatus.CREATED);
