@@ -1,4 +1,4 @@
-INSERT INTO user_entity(user_id, email, firstname, lastname)
+INSERT INTO user_entity(user_id, email, first_name, last_name)
 VALUES(nextval('user_seq_gen'), 'ime@gmail.com', 'ime', 'prezime');
 
 -- orders
