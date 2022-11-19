@@ -11,6 +11,9 @@ import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
+import java.io.IOException;
+
 import java.util.*;
 
 @Service
@@ -29,6 +32,15 @@ public class OrderServiceImpl implements OrderService{
         OrderEntity createdOrder = processOrder(newOrder);
         return modelMapper.map(createdOrder, Order.class);
     }
+
+
+//    private boolean doesUserExist(int userId){
+//        if(userRepository.findById(userId).orElse(null) == null){
+//            return false;
+//        }
+//        return true;
+//    }
+    @Transactional
 
     public OrderEntity processOrder(OrderEntity newOrder) {
         List<OrderEntity> suitableOrders = findSuitableOrders(newOrder);
