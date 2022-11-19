@@ -20,7 +20,7 @@ public class User {
     private String lastName;
     private static final Pattern pattern = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
 
-    public Boolean isValid()
+    public Boolean isUserValid()
     {
        Matcher matcher = pattern.matcher(this.email);
        return matcher.find();
