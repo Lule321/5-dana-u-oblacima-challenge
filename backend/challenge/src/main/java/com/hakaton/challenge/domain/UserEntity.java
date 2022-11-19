@@ -16,12 +16,12 @@ import java.util.List;
 @Builder
 public class UserEntity {
     @Id
-    @SequenceGenerator(name = "userSeqGen", sequenceName = "userSeqGen", initialValue = 1, allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "userSeqGen")
+   // @SequenceGenerator(name = "userSeqGen", sequenceName = "userSeqGen", initialValue = 1, allocationSize = 1)
+    //@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "userSeqGen")
     @Column(name="user_id", unique=true, nullable=false)
-    private int id;
+    private Long id;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
     private String email;
 
     @Column(nullable = false)

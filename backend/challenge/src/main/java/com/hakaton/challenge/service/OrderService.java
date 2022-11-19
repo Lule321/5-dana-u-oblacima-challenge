@@ -9,7 +9,7 @@ public interface OrderService {
 
     OrderbookEntity LoadOrderBook(String pair);
 
-    Order FetchOrderByIdWithTrades(Integer id);
+    Order FetchOrderByIdWithTrades(Long id);
 
     void deleteAll();
 }

@@ -14,7 +14,7 @@ import java.util.regex.Pattern;
 @Builder
 public class User {
 
-    private int id;
+    private Long id;
     private String email;
     private String firstName;
     private String lastName;

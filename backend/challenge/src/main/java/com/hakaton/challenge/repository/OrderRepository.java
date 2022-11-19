@@ -7,10 +7,10 @@ import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
-public interface OrderRepository extends JpaRepository<OrderEntity, Integer> {
+public interface OrderRepository extends JpaRepository<OrderEntity, Long> {
 
     @Query(value = "select o from OrderEntity o left join fetch o.trades where o.id = ?1")
-    OrderEntity fetchWithTrades(int orderId);
+    OrderEntity fetchWithTrades(Long orderId);
 
     @Query(value = "select o from OrderEntity o where o.orderStatus = 0 and o.currencyPair = ?1")
     List<OrderEntity> findActiveOrders(String pair);

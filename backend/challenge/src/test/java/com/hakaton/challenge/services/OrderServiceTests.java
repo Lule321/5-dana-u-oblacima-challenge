@@ -106,13 +106,13 @@ public class OrderServiceTests {
     }
 
     private List<OrderEntity> getBuyOrdersForProcessing() {
-        OrderEntity order1 = OrderEntity.builder().id(1).currencyPair(DB_CURRENCY_PAIR).orderStatus(DB_ORDER_STATUS).type(OrderType.BUY)
+        OrderEntity order1 = OrderEntity.builder().id(1L).currencyPair(DB_CURRENCY_PAIR).orderStatus(DB_ORDER_STATUS).type(OrderType.BUY)
                 .createdDateTime(DB_DATE_TIME).filledQuantity(DB_FILLED_QUANTITY).quantity(250.0).price(7.0).trades(new ArrayList<>()).build();
-        OrderEntity order2 = OrderEntity.builder().id(2).currencyPair(DB_CURRENCY_PAIR).orderStatus(DB_ORDER_STATUS).type(OrderType.BUY)
+        OrderEntity order2 = OrderEntity.builder().id(2L).currencyPair(DB_CURRENCY_PAIR).orderStatus(DB_ORDER_STATUS).type(OrderType.BUY)
                 .createdDateTime(DB_DATE_TIME).filledQuantity(DB_FILLED_QUANTITY).quantity(800.0).price(6.0).trades(new ArrayList<>()).build();
-        OrderEntity order3 = OrderEntity.builder().id(3).currencyPair(DB_CURRENCY_PAIR).orderStatus(DB_ORDER_STATUS).type(OrderType.BUY)
+        OrderEntity order3 = OrderEntity.builder().id(3L).currencyPair(DB_CURRENCY_PAIR).orderStatus(DB_ORDER_STATUS).type(OrderType.BUY)
                 .createdDateTime(DB_DATE_TIME).filledQuantity(DB_FILLED_QUANTITY).quantity(150.0).price(5.0).trades(new ArrayList<>()).build();
-        OrderEntity order4 = OrderEntity.builder().id(4).currencyPair(DB_CURRENCY_PAIR).orderStatus(DB_ORDER_STATUS).type(OrderType.BUY)
+        OrderEntity order4 = OrderEntity.builder().id(4L).currencyPair(DB_CURRENCY_PAIR).orderStatus(DB_ORDER_STATUS).type(OrderType.BUY)
                 .createdDateTime(DB_DATE_TIME).filledQuantity(DB_FILLED_QUANTITY).quantity(5000.0).price(1.0).trades(new ArrayList<>()).build();
 
         List<OrderEntity> buyOrders = new ArrayList<>();
@@ -125,13 +125,13 @@ public class OrderServiceTests {
     }
 
     private List<OrderEntity> getSellOrdersForProcessing() {
-        OrderEntity order1 = OrderEntity.builder().id(3).currencyPair(DB_CURRENCY_PAIR).orderStatus(DB_ORDER_STATUS).type(OrderType.SELL)
+        OrderEntity order1 = OrderEntity.builder().id(3L).currencyPair(DB_CURRENCY_PAIR).orderStatus(DB_ORDER_STATUS).type(OrderType.SELL)
                 .createdDateTime(DB_DATE_TIME).filledQuantity(DB_FILLED_QUANTITY).quantity(100.0).price(9.0).trades(new ArrayList<>()).build();
-        OrderEntity order2 = OrderEntity.builder().id(3).currencyPair(DB_CURRENCY_PAIR).orderStatus(DB_ORDER_STATUS).type(OrderType.SELL)
+        OrderEntity order2 = OrderEntity.builder().id(3L).currencyPair(DB_CURRENCY_PAIR).orderStatus(DB_ORDER_STATUS).type(OrderType.SELL)
                 .createdDateTime(DB_DATE_TIME).filledQuantity(DB_FILLED_QUANTITY).quantity(50.0).price(10.0).trades(new ArrayList<>()).build();
-        OrderEntity order3 = OrderEntity.builder().id(3).currencyPair(DB_CURRENCY_PAIR).orderStatus(DB_ORDER_STATUS).type(OrderType.SELL)
+        OrderEntity order3 = OrderEntity.builder().id(3L).currencyPair(DB_CURRENCY_PAIR).orderStatus(DB_ORDER_STATUS).type(OrderType.SELL)
                 .createdDateTime(DB_DATE_TIME).filledQuantity(DB_FILLED_QUANTITY).quantity(1000.0).price(11.0).trades(new ArrayList<>()).build();
-        OrderEntity order4 = OrderEntity.builder().id(3).currencyPair(DB_CURRENCY_PAIR).orderStatus(DB_ORDER_STATUS).type(OrderType.SELL)
+        OrderEntity order4 = OrderEntity.builder().id(3L).currencyPair(DB_CURRENCY_PAIR).orderStatus(DB_ORDER_STATUS).type(OrderType.SELL)
                 .createdDateTime(DB_DATE_TIME).filledQuantity(DB_FILLED_QUANTITY).quantity(250.0).price(15.0).trades(new ArrayList<>()).build();
 
         List<OrderEntity> sellOrders = new ArrayList<>();
@@ -144,16 +144,16 @@ public class OrderServiceTests {
     }
 
     private List<OrderEntity> getActiveOrdersForOrderbook() {
-        OrderEntity order1 = OrderEntity.builder().id(1).currencyPair(DB_CURRENCY_PAIR).orderStatus(DB_ORDER_STATUS).type(OrderType.BUY)
+        OrderEntity order1 = OrderEntity.builder().id(1L).currencyPair(DB_CURRENCY_PAIR).orderStatus(DB_ORDER_STATUS).type(OrderType.BUY)
                 .createdDateTime(DB_DATE_TIME).filledQuantity(DB_FILLED_QUANTITY).quantity(250.0).price(10.0).build();
-        OrderEntity order2 = OrderEntity.builder().id(2).currencyPair(DB_CURRENCY_PAIR).orderStatus(DB_ORDER_STATUS).type(OrderType.BUY)
+        OrderEntity order2 = OrderEntity.builder().id(2L).currencyPair(DB_CURRENCY_PAIR).orderStatus(DB_ORDER_STATUS).type(OrderType.BUY)
                 .createdDateTime(DB_DATE_TIME).filledQuantity(DB_FILLED_QUANTITY).quantity(50.0).price(10.0).build();
-        OrderEntity order3 = OrderEntity.builder().id(3).currencyPair(DB_CURRENCY_PAIR).orderStatus(DB_ORDER_STATUS).type(OrderType.BUY)
+        OrderEntity order3 = OrderEntity.builder().id(3L).currencyPair(DB_CURRENCY_PAIR).orderStatus(DB_ORDER_STATUS).type(OrderType.BUY)
                 .createdDateTime(DB_DATE_TIME).filledQuantity(DB_FILLED_QUANTITY).quantity(150.0).price(7.0).build();
 
-        OrderEntity order4 = OrderEntity.builder().id(4).currencyPair(DB_CURRENCY_PAIR).orderStatus(DB_ORDER_STATUS).type(OrderType.SELL)
+        OrderEntity order4 = OrderEntity.builder().id(4L).currencyPair(DB_CURRENCY_PAIR).orderStatus(DB_ORDER_STATUS).type(OrderType.SELL)
                 .createdDateTime(DB_DATE_TIME).filledQuantity(DB_FILLED_QUANTITY).quantity(150.0).price(7.0).build();
-        OrderEntity order5 = OrderEntity.builder().id(3).currencyPair(DB_CURRENCY_PAIR).orderStatus(DB_ORDER_STATUS).type(OrderType.SELL)
+        OrderEntity order5 = OrderEntity.builder().id(3L).currencyPair(DB_CURRENCY_PAIR).orderStatus(DB_ORDER_STATUS).type(OrderType.SELL)
                 .createdDateTime(DB_DATE_TIME).filledQuantity(DB_FILLED_QUANTITY).quantity(100.0).price(7.0).build();
 
         List<OrderEntity> allOrders = new ArrayList<>();

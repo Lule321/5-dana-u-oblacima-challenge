@@ -42,7 +42,7 @@ public class OrderServiceImpl implements OrderService{
         return modelMapper.map(createdOrder, Order.class);
     }
 
-    private boolean doesUserExist(int userId){
+    private boolean doesUserExist(Long userId){
         if(userRepository.findById(userId).orElse(null) == null){
             return false;
         }
@@ -79,10 +79,7 @@ public class OrderServiceImpl implements OrderService{
     private void createNewOrderWithRemainingQuantity(OrderEntity newOrder, double remainOrderQuantity) {
         if(newOrder.getFilledQuantity() == 0) return;
 
-        closeOrder(newOrder);
-        Order orderWithRemainingQuantity = modelMapper.map(newOrder, Order.class);
-        orderWithRemainingQuantity.setQuantity(remainOrderQuantity);
-        saveOrder(modelMapper.map(orderWithRemainingQuantity, Order.class));
+        orderRepository.save(newOrder);
     }
 
     private void createTrade (CreateTradeDto tradeDto) {
@@ -150,14 +147,14 @@ public class OrderServiceImpl implements OrderService{
     }
 
     @Override
-    public Order FetchOrderByIdWithTrades(Integer id) {
+    public Order FetchOrderByIdWithTrades(Long id) {
         OrderEntity orderEntity = orderRepository.fetchWithTrades(id);
         if(orderEntity == null) throw new OrderNotFoundException();
         orderEntity.setTrades(tradeRepository.fetchTradesByOrder(id));
         return modelMapper.map(orderEntity, Order.class);
     }
 
-    public OrderEntity findOrderById(Integer id) {
+    public OrderEntity findOrderById(Long id) {
         Optional<OrderEntity> order = orderRepository.findById(id);
         if(order.isPresent())
             return order.get();
@@ -169,7 +166,7 @@ public class OrderServiceImpl implements OrderService{
     public void deleteAll() {  tradeRepository.deleteAll(); orderRepository.deleteAll(); userRepository.deleteAll();}
 
     private OrderEntity saveOrder(Order order) {
-        order.setId(0);
+        //order.setId(0);
         OrderEntity orderEntity = modelMapper.map(order, OrderEntity.class);
         orderEntity.setOrderStatus(OrderStatus.OPEN);
         orderEntity.setCreatedDateTime(new Date());

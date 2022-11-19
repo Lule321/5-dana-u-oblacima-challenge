@@ -13,7 +13,7 @@ import java.util.Date;
 @Builder
 public class Trade {
 
-    private int id;
+    private Long id;
     private int buyOrderId;
     private int sellOrderId;
     private Date createdDateTime;

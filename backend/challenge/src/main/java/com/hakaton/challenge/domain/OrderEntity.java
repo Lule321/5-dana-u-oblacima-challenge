@@ -18,10 +18,10 @@ import java.util.List;
 public class OrderEntity {
 
     @Id
-    @SequenceGenerator(name = "orderSeqGen", sequenceName = "orderSeqGen", initialValue = 1, allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "orderSeqGen")
+   // @SequenceGenerator(name = "orderSeqGen", sequenceName = "orderSeqGen", initialValue = 1, allocationSize = 1)
+    //@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "orderSeqGen")
     @Column(name="order_id", unique=true, nullable=false)
-    private int id;
+    private Long id;
 
     @Column(nullable = false)
     private String currencyPair = "BTCUSD";

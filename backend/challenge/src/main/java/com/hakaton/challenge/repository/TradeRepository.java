@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
-public interface TradeRepository extends JpaRepository<TradeEntity, Integer> {
+public interface TradeRepository extends JpaRepository<TradeEntity, Long> {
     @Query(value = "select t from TradeEntity t where t.sellOrderId = ?1 or t.buyOrderId = ?1")
-    List<TradeEntity> fetchTradesByOrder(int orderId);
+    List<TradeEntity> fetchTradesByOrder(Long orderId);
 }

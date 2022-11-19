@@ -17,7 +17,7 @@ import java.util.List;
 @Builder
 public class Order {
 
-    private int id;
+    private Long id;
     private String currencyPair = "BTCUSD";
     private Date createdDateTime;
     private OrderType type;
@@ -26,7 +26,7 @@ public class Order {
     private Double filledQuantity;
     private OrderStatus orderStatus;
     private List<Trade> trades;
-    private int userId;
+    private Long userId;
 
     public Boolean IsValid() {
         if(isCurrencyValid() && isQuantityValid() && isPriceValid() && isTypeValid())

@@ -7,7 +7,7 @@ import java.util.Date;
 
 public class OrderConstants {
 
-    public static final int DB_ORDER_ID = 1;
+    public static final Long DB_ORDER_ID = 1L;
     public static final Date DB_DATE_TIME = new Date(2022,10,6);
     public static final String DB_CURRENCY_PAIR= "BTCUSD";
     public static final double DB_FILLED_QUANTITY= 0.0;
